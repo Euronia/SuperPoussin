@@ -1,0 +1,25 @@
+object Egg is FallingObject
+	attribute fired
+	function $on_add
+		set_attribute $solid true
+		set_attribute $climbable true
+		set_attribute $pushable true
+		set_attribute $fall true
+		set_attribute fired false
+	end
+	function $on_move
+		call_function explode of object TNT search_pos $x $y-1
+		if find object Cannon search_pos $x $y
+			set_attribute fired true
+		end
+		if fired
+			if find object any search_pos_solid $x+1 $y
+				remove object BoxGlass search_pos $x+1 $y
+				set_attribute fired false
+			else
+				call_function move $x+1 $y of this
+			end
+		end
+		call_function $on_move of super FallingObject
+	end
+end

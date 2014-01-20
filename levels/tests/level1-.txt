@@ -1,0 +1,16 @@
+Poussin 2 0
+Rocket 16 0
+
+Egg 10 2
+
+Box 8 0
+Box 9 1
+BoxKey 10 1 1
+Box 11 1
+Box 12 0
+
+Box 9 4
+BoxFall 10 4
+Box 11 4
+
+Key 14 0 1

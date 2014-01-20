@@ -1,0 +1,28 @@
+object Key
+	attribute const color
+	function $on_add
+		set_attribute color #0
+		set_attribute $solid false
+		set_attribute $image_id color%5
+	end
+	function $on_collision_poussin
+		remove object BoxKey search_color color
+		remove object Key search_color color
+	end
+	function search_color
+		return color=#0
+	end
+end
+
+object BoxKey
+	attribute const color
+	function $on_add
+		set_attribute color #0
+		set_attribute $solid true
+		set_attribute $climbable true
+		set_attribute $image_id color%5
+	end
+	function search_color
+		return color=#0
+	end
+end

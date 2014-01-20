@@ -1,0 +1,84 @@
+Poussin 1 0
+Rocket 22 0
+BoxDirt 5 4 6
+BoxDirt 5 3 4
+BoxDirt 5 2 4
+BoxDirt 5 1 4
+BoxDirt 5 0 4
+BoxDirt 8 1 4
+BoxDirt 8 2 10
+BoxDirt 13 4 10
+BoxDirt 14 5 6
+BoxDirt 16 3 6
+BoxDirt 15 5 7
+BoxDirt 17 3 7
+BoxDirt 11 8 6
+BoxDirt 5 8 6
+BoxDirt 5 6 6
+BoxDirt 8 8 5
+BoxDirt 7 6 5
+BoxDirt 6 8 3
+BoxDirt 8 6 3
+BoxDirt 6 6 1
+BoxDirt 7 8 5
+BoxDirt 12 1 10
+BoxDirt 12 0 4
+BoxDirt 7 1 6
+BoxDirt 10 1 7
+BoxDirt 7 4 7
+BoxDirt 10 6 1
+BoxDirt 20 0 4
+BoxDirt 20 1 10
+BoxFall 6 4
+BoxFall 9 1
+BoxFall 9 6
+BoxFall 9 8
+BoxFall 11 6
+BoxFall 12 6
+BoxFall 12 8
+BoxFall 17 5
+BoxKey 19 1 0
+BoxKey 12 2 0
+BoxKey 6 5 1
+BoxKey 12 3 2
+BoxKey 7 5 2
+BoxKey 15 6 2
+BoxKey 7 7 3
+BoxKey 8 9 3
+BoxKey 8 3 4
+BoxKey 16 4 5
+Egg 15 7
+Flower 4 0
+Flower 4 1
+Flower 4 2
+Flower 4 3
+Flower 4 4
+Flower 4 5
+Flower 4 6
+Flower 4 7
+Flower 4 8
+Flower 4 9
+Flower 10 7
+Flower 10 8
+Flower 10 9
+Flower 11 0
+Flower 11 1
+Flower 11 2
+Flower 11 3
+Flower 11 4
+Flower 13 5
+Flower 13 6
+Flower 13 7
+Flower 13 8
+Flower 13 9
+Flower 15 0
+Flower 15 1
+Flower 15 2
+Flower 15 3
+Flower 15 4
+Key 8 0 0
+Key 10 7 1
+Key 11 7 2
+Key 6 9 3
+Key 9 9 4
+Key 13 9 5

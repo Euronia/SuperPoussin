@@ -1,0 +1,85 @@
+Poussin 1 0
+Rocket 13 11
+BoxDirt 12 0 4
+BoxDirt 11 1 10
+BoxDirt 12 0 9
+BoxDirt 11 0 4
+BoxDirt 11 12 10
+BoxDirt 4 12 10
+BoxDirt 1 10 10
+BoxDirt 1 9 4
+BoxDirt 1 8 4
+BoxDirt 10 9 4
+BoxDirt 10 8 4
+BoxDirt 10 7 4
+BoxDirt 4 10 4
+BoxDirt 4 9 4
+BoxDirt 4 8 4
+BoxDirt 4 7 4
+BoxDirt 4 6 4
+BoxDirt 4 5 4
+BoxDirt 14 9 4
+BoxDirt 14 8 4
+BoxDirt 14 7 4
+BoxDirt 14 6 4
+BoxDirt 14 5 4
+BoxDirt 14 4 4
+BoxDirt 14 3 4
+BoxDirt 14 2 4
+BoxDirt 14 1 4
+BoxDirt 14 0 4
+BoxDirt 14 10 7
+BoxDirt 14 10 7
+BoxDirt 13 10 5
+BoxDirt 12 10 1
+BoxDirt 11 10 2
+BoxDirt 5 10 5
+BoxDirt 6 10 1
+BoxDirt 7 10 3
+BoxDirt 6 7 2
+BoxDirt 8 10 7
+BoxDirt 10 10 6
+BoxDirt 10 5 6
+BoxDirt 10 3 6
+BoxDirt 13 7 6
+BoxDirt 12 5 3
+BoxDirt 13 5 2
+BoxDirt 11 5 1
+BoxDirt 8 5 7
+BoxDirt 7 5 3
+BoxDirt 6 5 5
+BoxDirt 5 5 2
+BoxDirt 3 8 2
+BoxDirt 2 8 1
+BoxDirt 12 3 3
+BoxDirt 13 3 1
+BoxDirt 7 7 7
+Box 1 10
+BoxFall 11 3
+BoxKey 12 6 0
+BoxKey 4 11 0
+BoxKey 9 10 1
+BoxKey 11 11 2
+BoxKey 5 7 3
+Egg 7 8
+Flower 5 6
+Flower 5 7
+Flower 5 8
+Flower 9 0
+Flower 9 1
+Flower 9 2
+Flower 9 3
+Flower 9 4
+Flower 9 5
+Flower 9 6
+Flower 9 7
+Flower 9 8
+Flower 9 9
+Flower 9 10
+Flower 9 11
+DarkPoussin 13 6
+DarkPoussin 6 11
+Key 10 4 0
+Key 13 0 1
+Key 13 4 2
+Key 13 8 3

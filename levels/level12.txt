@@ -1,0 +1,65 @@
+Poussin 1 5
+Rocket 7 2
+BoxDirt 0 4 6
+BoxDirt 1 4 2
+BoxDirt 2 4 2
+BoxDirt 3 4 1
+BoxDirt 6 4 6
+BoxDirt 6 4 10
+BoxDirt 6 4 5
+BoxDirt 4 3 4
+BoxDirt 4 2 4
+BoxDirt 4 1 4
+BoxDirt 8 3 4
+BoxDirt 8 2 4
+BoxDirt 8 1 4
+BoxDirt 8 0 4
+BoxDirt 10 3 4
+BoxDirt 10 2 4
+BoxDirt 10 1 4
+BoxDirt 10 0 4
+BoxDirt 4 4 5
+BoxDirt 5 1 5
+BoxDirt 7 1 5
+BoxDirt 6 1 1
+BoxDirt 9 0 5
+BoxDirt 8 6 2
+BoxDirt 10 6 1
+BoxDirt 10 4 6
+BoxDirt 8 4 9
+BoxDirt 11 4 3
+BoxDirt 13 4 2
+BoxDirt 15 4 2
+BoxDirt 15 4 5
+BoxDirt 14 4 2
+BoxDirt 12 4 1
+BoxDirt 14 6 10
+BoxDirt 22 6 10
+BoxDirt 13 10 6
+BoxDirt 17 10 6
+BoxDirt 15 10 7
+BoxDirt 18 10 7
+BoxDirt 14 10 1
+BoxDirt 18 4 2
+BoxDirt 17 4 5
+BoxDirt 19 4 5
+BoxDirt 21 4 5
+BoxDirt 25 4 7
+BoxDirt 23 4 3
+BoxDirt 24 4 1
+BoxDirt 22 4 2
+BoxKey 5 4 1
+Box 6 4
+BoxFall 9 6
+BoxKey 14 5 0
+BoxKey 22 5 1
+Egg 12 5
+Egg 18 5
+Key 14 7 0
+Key 22 7 1
+Ventilo 7 4 2 2
+Ventilo 16 4 2 6
+VentiloSwitch 20 4 2 3 1 1
+VentiloSwitch 19 7 2 3 1 0
+Switch 14 11 0
+Switch 24 5 1

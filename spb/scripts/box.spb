@@ -1,0 +1,14 @@
+object Box
+	function $on_add
+		set_attribute $solid true
+		set_attribute $climbable true
+	end
+end
+
+object BoxDirt
+	function $on_add
+		set_attribute $solid true
+		set_attribute $climbable true
+		set_attribute $image_id #0
+	end
+end

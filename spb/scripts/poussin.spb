@@ -1,0 +1,79 @@
+object Poussin is Unit
+	function $on_add
+		call_function $on_add of super Unit
+		set_attribute hostile false
+		call_function turn_right of this
+	end
+
+	function move
+		if find object Rocket search_pos #0 #1 // TODO: send to rocket.spb
+			call_function on_win of this
+		else
+			if find object Unit search_pos_hostile #0 #1
+				call_function on_death of this
+			else
+				call_function move #0 #1 of super Unit
+				call_function $on_collision_poussin of object any search_pos $x $y
+			end
+		end
+	end
+	function move_horizontal
+		if find object any search_pos_solid $x+#0 $y
+			if find object any search_pos_pushable $x+#0 $y // can push sth
+				if find object any search_pos_solid $x+(#0*2) $y
+				else // free tile behind
+					call_function move $x+(#0*2) $y of object any search_pos_pushable $x+#0 $y
+				end
+			end
+			if find object any search_pos_solid $x+#0 $y
+				if find object any search_pos_climbable $x+#0 $y // can climb sth
+					if find object any search_pos_solid $x $y+1
+					else // nothing over head
+						if find object any search_pos_solid $x+#0 $y+1
+						else // nothing up there
+							call_function move $x+#0 $y+1 of this
+						end
+					end
+				end
+			else
+				call_function move $x+#0 $y of this
+			end
+		else
+			call_function move $x+#0 $y of this
+		end
+	end
+	function $on_control_move
+		if !falling
+			if #0=right
+				call_function move_right of this
+			end
+			if #0=left
+				call_function move_left of this
+			end
+			if #0=up
+				call_function move_up of this
+			end
+			if #0=down
+				call_function move_down of this
+			end
+		end
+	end
+	function $on_control_use
+		call_function $on_use of object any search_pos $x $y
+	end
+
+	function handle_gravity
+		if find object Flower search_pos $x $y
+			set_attribute falling false
+		else
+			call_function handle_gravity of super Unit
+		end
+	end
+
+	function on_win
+		call_sys game_over true
+	end
+	function on_death
+		call_sys game_over false
+	end
+end

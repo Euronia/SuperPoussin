@@ -1,0 +1,31 @@
+object TNT
+	function $on_add
+		set_attribute $solid true
+		set_attribute $climbable true
+		add object TNT_Logic $x $y+1 $index
+	end
+	function search_tnt
+		return $index=#0
+	end
+	function explode
+		from -2 to 2
+			from -2 to 2
+				if (#0!=0)|(#1!=0)
+					remove object any search_pos $x+#0 $y+#1
+				end
+			end
+		end
+		remove this
+	end
+end
+
+object TNT_Logic
+	attribute const tnt_id
+	function $on_add
+		set_attribute $solid false
+		set_attribute tnt_id #0
+	end
+	function $on_collision
+		call_function explode of object TNT search_tnt tnt_id
+	end
+end

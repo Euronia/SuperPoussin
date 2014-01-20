@@ -1,0 +1,12 @@
+object Cannon
+	function $on_add
+		set_attribute $solid false
+	end
+end
+
+object BoxGlass
+	function $on_add
+		set_attribute $solid true
+		set_attribute $climbable true
+	end
+end

@@ -1,0 +1,76 @@
+object BoxFall is FallingObject
+	function $on_add
+		set_attribute $solid true
+		set_attribute $climbable true
+		set_attribute $fall false
+		set_attribute $heavy true
+		call_function create_logic of this
+	end
+	function create_logic
+		add object BoxFall_On $x $y+1 $index
+		add object BoxFall_Away $x-1 $y+1 $index
+		add object BoxFall_Away $x+1 $y+1 $index
+		add object BoxFall_Away $x $y+2 $index
+	end
+	function $on_remove
+		call_function remove_logic of this
+	end
+	function remove_logic
+		remove object BoxFall_On search_box $index
+		remove object BoxFall_Away search_box $index
+	end
+	function fall
+		set_attribute $fall true
+	end
+	function $on_move
+		call_function remove_logic of this
+		call_function create_logic of this
+	end
+	function $on_move_fail
+		set_attribute $fall false
+	end
+	function search_box
+		return #0=$index
+	end
+end
+
+object BoxFall_On
+	attribute const box_id
+	function $on_add
+		set_attribute box_id #0
+		set_attribute $solid false
+		set_attribute $image_visible false
+	end
+	function $on_collision_poussin
+		call_function poussin_on_box of object BoxFall_Away search_box box_id
+	end
+	function search_box
+		return #0=box_id
+	end
+end
+
+object BoxFall_Away
+	attribute const box_id
+	attribute poussin_on
+	function $on_add
+		set_attribute box_id #0
+		set_attribute poussin_on false
+		set_attribute $solid false
+		set_attribute $image_visible false
+	end
+	function $on_collision_poussin
+		if poussin_on
+			call_function fall of object BoxFall search_box box_id
+			call_function poussin_away_box of object BoxFall_Away search_box box_id
+		end
+	end
+	function poussin_on_box
+		set_attribute poussin_on true
+	end
+	function poussin_away_box
+		set_attribute poussin_on false
+	end
+	function search_box
+		return #0=box_id
+	end
+end

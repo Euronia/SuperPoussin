@@ -1,0 +1,45 @@
+object DarkPoussin is Unit // TODO: fix collision
+	attribute direction
+	function $on_add
+		set_attribute $solid false
+		set_attribute hostile true
+		call_function set_direction right of this
+		call_function $on_add $x $y of super Unit
+	end
+	function set_direction
+		set_attribute direction #0
+		if #0=left
+			call_function turn_left of this
+		else
+			call_function turn_right of this
+		end
+	end
+	function move
+		call_function on_death of object Poussin search_pos #0 #1
+		set_attribute $x #0
+		set_attribute $y #1
+		call_function $on_move of this
+	end
+	attribute moving
+	function $on_tick
+		if !falling
+			set_attribute moving true
+			if direction=right
+				call_function move_right of this
+			else
+				call_function move_left of this
+			end
+			set_attribute moving false
+		end
+		call_function $on_tick of super Unit
+	end
+	function $on_move_fail
+		if moving
+			if direction=right
+				call_function set_direction left of this
+			else
+				call_function set_direction right of this
+			end
+		end
+	end
+end

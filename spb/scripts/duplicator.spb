@@ -1,0 +1,26 @@
+object Duplicator
+	function $on_add
+		set_attribute $solid true
+		set_attribute $climbable true
+		add object Duplicator_Logic $x $y+1 #0 #1
+	end
+end
+
+object Duplicator_Logic
+	attribute const dest_x
+	attribute const dest_y
+	attribute used
+	function $on_add
+		set_attribute $solid false
+		set_attribute $image_visible false
+		set_attribute dest_x #0
+		set_attribute dest_y #1
+		set_attribute used false
+	end
+	function $on_use
+		if !used
+			add object Poussin dest_x dest_y
+			set_attribute used true
+		end
+	end
+end

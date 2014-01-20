@@ -1,0 +1,102 @@
+object FallingObject
+	// movement
+	function move_horizontal
+		if find object any search_pos_solid $x+#0 $y
+			call_function $on_move_fail of this
+		else
+			call_function move $x+#0 $y of this
+		end
+	end
+	function move_vertical
+		if ($y+#0)>=0
+			if find object any search_pos_solid $x $y+#0
+				call_function $on_move_fail of this
+			else
+				call_function move $x $y+#0 of this
+			end
+		else
+			call_function $on_move_fail of this
+		end
+	end
+	function move_right
+		call_function move_horizontal 1 of this
+	end
+	function move_left
+		call_function move_horizontal -1 of this
+	end
+	function move_up
+		call_function move_vertical 1 of this
+	end
+	function move_down
+		call_function move_vertical -1 of this
+	end
+
+	// gravity
+	attribute falling
+	attribute g_x_pos
+	attribute g_y_pos
+	attribute g_x_newpos
+	attribute g_y_newpos
+	function $on_add
+		set_attribute falling false
+	end
+	function add_to_gravity_pos
+		set_attribute g_x_pos g_x_pos+#0
+		set_attribute g_y_pos g_y_pos+#1
+	end
+	function add_to_gravity_newpos
+		set_attribute g_x_newpos g_x_newpos+#0
+		set_attribute g_y_newpos g_y_newpos+#1
+	end
+	function handle_gravity
+		set_attribute falling false
+
+		if $heavy
+			call_function move_down of this
+		else
+			set_attribute g_x_pos 0
+			set_attribute g_y_pos -1
+			call_function add_gravity_pos $index of object any search_pos_notsolid $x $y
+
+			if g_x_pos!=0
+				set_attribute g_x_newpos 0
+				set_attribute g_y_newpos -1
+				if g_x_pos>0
+					call_function add_gravity_newpos $index of object any search_pos_notsolid $x+1 $y
+					if (g_x_newpos>=0)|(g_x_pos>(0-g_x_newpos))
+						call_function move_right of this
+					end
+				else
+					call_function add_gravity_newpos $index of object any search_pos_notsolid $x-1 $y
+					if (g_x_newpos<=0)|(g_x_pos<(0-g_x_newpos))
+						call_function move_left of this
+					end
+				end
+			end
+
+			if (!falling)&(g_y_pos!=0)
+				set_attribute g_x_newpos 0
+				set_attribute g_y_newpos -1
+				if g_y_pos>0
+					call_function add_gravity_newpos $index of object any search_pos_notsolid $x $y+1
+					if (g_y_newpos>=0)|(g_y_pos>(0-g_y_newpos))
+						call_function move_up of this
+					end
+				else
+					call_function add_gravity_newpos $index of object any search_pos_notsolid $x $y-1
+					if (g_y_newpos<=0)|(g_y_pos<(0-g_y_newpos))
+						call_function move_down of this
+					end
+				end
+			end
+		end
+	end
+	function $on_move
+		set_attribute falling true
+	end
+	function $on_tick
+		if $fall
+			call_function handle_gravity of this
+		end
+	end
+end

@@ -1,0 +1,94 @@
+Poussin 0 7
+Rocket 15 4
+BoxDirt 0 2 4
+BoxDirt 0 3 4
+BoxDirt 0 4 4
+BoxDirt 0 1 4
+BoxDirt 0 0 4
+BoxDirt 1 0 4
+BoxDirt 2 0 5
+BoxDirt 1 1 9
+BoxDirt 3 0 4
+BoxDirt 3 1 8
+BoxDirt 1 4 4
+BoxDirt 1 5 4
+BoxDirt 3 7 4
+BoxDirt 5 1 3
+BoxDirt 6 1 4
+BoxDirt 6 3 4
+BoxDirt 7 3 4
+BoxDirt 8 3 4
+BoxDirt 7 1 4
+BoxDirt 8 0 4
+BoxDirt 7 2 4
+BoxDirt 7 0 4
+BoxDirt 5 3 4
+BoxDirt 8 5 4
+BoxDirt 9 5 4
+BoxDirt 10 5 4
+BoxDirt 8 6 10
+BoxDirt 5 4 10
+BoxDirt 6 1 1
+BoxDirt 8 0 5
+BoxDirt 10 0 4
+BoxDirt 12 1 4
+BoxDirt 12 2 4
+BoxDirt 13 2 4
+BoxDirt 13 1 4
+BoxDirt 12 5 4
+BoxDirt 13 5 4
+BoxDirt 14 8 4
+BoxDirt 14 7 4
+BoxDirt 14 6 4
+BoxDirt 14 5 4
+BoxDirt 12 7 7
+BoxDirt 11 7 6
+BoxDirt 3 6 4
+BoxDirt 3 9 6
+BoxDirt 4 9 5
+BoxDirt 5 9 5
+BoxDirt 6 9 5
+BoxDirt 7 9 5
+BoxDirt 8 9 5
+BoxDirt 9 9 5
+BoxDirt 10 9 5
+BoxDirt 11 9 5
+BoxDirt 12 9 5
+BoxDirt 13 9 5
+BoxDirt 14 9 7
+BoxDirt 12 3 6
+BoxDirt 13 3 7
+BoxDirt 14 0 5
+BoxDirt 13 0 4
+BoxDirt 15 0 4
+BoxDirt 0 6 6
+BoxDirt 1 6 1
+BoxDirt 15 1 4
+BoxDirt 15 2 4
+BoxDirt 16 3 4
+BoxDirt 16 4 4
+BoxDirt 16 5 4
+BoxDirt 16 6 4
+BoxDirt 15 6 4
+BoxDirt 15 3 6
+BoxKey 1 3 2
+BoxKey 7 5 2
+BoxKey 11 5 1
+BoxKey 13 4 0
+BoxFall 2 1
+Egg 1 7
+Egg 7 6
+Flower 3 2
+Flower 3 3
+Key 6 2 0
+Key 12 6 1
+Key 11 6 2
+VentiloSwitch 4 1 2 6 1 2
+VentiloSwitch 9 0 2 3 0 0
+VentiloSwitch 10 1 2 2 0 1
+VentiloSwitch 11 1 2 2 0 2
+Ventilo 3 8 0 6
+Switch 1 2 2
+Switch 8 7 2
+Switch 8 1 0
+Switch 12 8 1

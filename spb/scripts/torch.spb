@@ -1,0 +1,49 @@
+object Torch
+	attribute on_fire
+	function $on_add
+		set_attribute on_fire #0
+		set_attribute $solid false
+		set_attribute $image_id on_fire
+	end
+	function $on_collision_poussin
+		add item Torch on_fire
+		remove this
+	end
+end
+
+object Blaze
+	attribute on_fire
+	attribute mechanism_id
+	function $on_add
+		set_attribute on_fire #0
+		set_attribute mechanism_id #1
+		set_attribute $solid false
+		set_attribute $image_id on_fire
+	end
+	function $on_use
+		if on_fire
+			call_function burn of item Torch search_on_fire false
+		else
+			if find item Torch search_on_fire true
+				set_attribute on_fire true
+				set_attribute $image_id on_fire
+				call_function toggle of object VentiloSwitch search_mechanism mechanism_id
+			end
+		end
+	end
+end
+
+item Torch
+	attribute on_fire
+	function $on_add
+		set_attribute on_fire #0
+		set_attribute $image_id on_fire
+	end
+	function search_on_fire
+		return on_fire=#0
+	end
+	function burn
+		set_attribute on_fire true
+		set_attribute $image_id on_fire
+	end
+end

@@ -1,0 +1,23 @@
+Poussin 8 0
+Rocket 16 3
+
+Flower 8 0
+Flower 8 1
+Flower 8 2
+Flower 8 3
+Box 9 2
+Box 10 2
+Box 11 2
+Box 12 2
+Box 13 2
+DarkPoussin 14 2
+Box 14 1
+Box 15 2
+Box 16 2
+
+Blaze 6 0 0 0
+Torch 10 0 0
+Blaze 10 3 1 0
+Egg 14 5
+VentiloSwitch 14 4 2 2 0 0
+Ventilo 15 7 1 2

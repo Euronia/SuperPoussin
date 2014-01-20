@@ -1,0 +1,62 @@
+object any
+	// move
+	function move
+		if #1<0
+			call_function $on_move_fail of this
+		else
+			set_attribute $x #0
+			set_attribute $y #1
+			call_function $on_move of this
+		end
+	end
+
+	// search
+	function search_index
+		return $index=#0
+	end
+	function search_pos
+		if ($x=#0)&($y=#1)
+			return true
+		end
+		return false
+	end
+	function search_pos_solid
+		if ($x=#0)&($y=#1)
+			return $solid
+		end
+		return false
+	end
+	function search_pos_notsolid
+		if ($x=#0)&($y=#1)
+			return !$solid
+		end
+		return false
+	end
+	function search_pos_climbable
+		if ($x=#0)&($y=#1)
+			return $climbable
+		end
+		return false
+	end
+	function search_pos_pushable
+		if ($x=#0)&($y=#1)
+			return $pushable
+		end
+		return false
+	end
+
+	// add gravity
+	function add_gravity_pos
+		call_function add_to_gravity_pos $gravite_x $gravite_y of object FallingObject search_index #0
+	end
+	function add_gravity_newpos
+		call_function add_to_gravity_newpos $gravite_x $gravite_y of object FallingObject search_index #0
+	end
+end
+
+item any
+	// search
+	function search_index
+		return $index=#0
+	end
+end

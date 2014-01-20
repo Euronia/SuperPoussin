@@ -1,0 +1,5 @@
+object Rocket
+	function $on_add
+		set_attribute $solid false
+	end
+end

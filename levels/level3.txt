@@ -1,0 +1,14 @@
+Poussin 2 0
+Rocket 16 0
+BoxDirt 7 2 8
+BoxDirt 7 2 6
+BoxDirt 8 2 1
+BoxDirt 12 0 4
+BoxDirt 12 1 10
+BoxDirt 9 2 7
+BoxDirt 13 0 9
+Egg 8 3
+Flower 6 1
+Flower 6 2
+Flower 6 3
+Flower 6 0

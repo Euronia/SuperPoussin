@@ -1,0 +1,9 @@
+Poussin 2 0
+Rocket 16 0
+
+Switch 8 0 1
+Box 10 0
+Box 11 0
+Egg 11 1
+Box 12 0
+VentiloSwitch 13 0 2 3 1 1

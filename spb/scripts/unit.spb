@@ -1,0 +1,32 @@
+object Unit is FallingObject
+	// hostility
+	attribute hostile
+	function search_pos_hostile
+		if ($x=#0)&($y=#1)
+			return hostile
+		end
+		return false
+	end
+
+	// turn
+	function turn_right
+		set_attribute $image_id 0
+	end
+	function turn_left
+		set_attribute $image_id 1
+	end
+
+	// movement
+	function $on_add
+		call_function $on_add of super FallingObject
+		set_attribute $fall true
+	end
+	function move_right
+		call_function move_right of super FallingObject
+		call_function turn_right of this
+	end
+	function move_left
+		call_function move_left of super FallingObject
+		call_function turn_left of this
+	end
+end

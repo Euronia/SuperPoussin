@@ -1,0 +1,14 @@
+Poussin 3 0
+Rocket 16 0
+
+Box 5 0
+Box 6 1
+Box 7 1
+Egg 7 2
+Box 8 1
+Box 9 1
+Cannon 9 2
+
+Box 12 0
+Box 12 1
+BoxGlass 12 2

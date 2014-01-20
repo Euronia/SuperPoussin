@@ -1,0 +1,6 @@
+Active allocated memory: 0 bytes
+Total allocated memory: 125312 bytes
+Max allocated memory: 77128 bytes
+Active allocations: 0
+Total allocations: 8986
+Max allocations: 3161

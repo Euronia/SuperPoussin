@@ -1,0 +1,6 @@
+object Flower
+	function $on_add
+		set_attribute $solid false
+		set_attribute $image_id $index%3
+	end
+end

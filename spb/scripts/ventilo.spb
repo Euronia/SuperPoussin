@@ -1,0 +1,97 @@
+object Switch
+	attribute const mechanism_id
+	attribute enabled
+	function $on_add
+		set_attribute mechanism_id #0
+		set_attribute enabled false
+		set_attribute $solid false
+		set_attribute $image_id 0
+	end
+	function $on_use
+		set_attribute enabled !enabled
+		if enabled
+			set_attribute $image_id 1
+		else
+			set_attribute $image_id 0
+		end
+		call_function toggle of object VentiloSwitch search_mechanism mechanism_id
+	end
+end
+
+object Ventilo
+	attribute const direction
+	attribute const strength
+	function $on_add
+		set_attribute direction #0
+		set_attribute strength #1
+		set_attribute $solid true
+		set_attribute $climbable true
+		set_attribute $image_id direction
+		from 1 to strength
+			if direction=right
+				add object Draft $x+#2 $y direction $index true
+			elsif direction=up
+				add object Draft $x $y+#2 direction $index true
+			elsif direction=left
+				add object Draft $x-#2 $y direction $index true
+			end
+		end
+	end
+	function $on_remove
+		remove object Draft search_ventilo $index
+	end
+end
+
+object VentiloSwitch is Ventilo
+	attribute enabled
+	attribute const mechanism_id
+	function $on_add
+		call_function $on_add #0 #1 of super Ventilo
+		set_attribute enabled #2
+		set_attribute mechanism_id #3
+		call_function update_drafts of this
+	end
+	function search_mechanism
+		return mechanism_id=#0
+	end
+	function update_drafts
+		call_function set_active enabled of object Draft search_ventilo $index
+	end
+	function toggle
+		set_attribute enabled !enabled
+		call_function update_drafts of this
+	end
+end
+
+object Draft
+	attribute const direction
+	attribute const ventilo_id
+	function $on_add
+		set_attribute direction #0
+		set_attribute ventilo_id #1
+		set_attribute $solid false
+		if (direction=up)|(direction=down)
+			set_attribute $image_id $index%2
+		else
+			set_attribute $image_id 2+($index%2)
+		end
+		call_function set_active #2 of this
+	end
+	function search_ventilo
+		return ventilo_id=#0
+	end
+	function set_active
+		set_attribute $gravite_x 0
+		set_attribute $gravite_y 0
+		if #0
+			if direction=right
+				set_attribute $gravite_x 3
+			elsif direction=up
+				set_attribute $gravite_y 3
+			elsif direction=left
+				set_attribute $gravite_x -3
+			end
+		end
+		set_attribute $image_visible #0
+	end
+end
